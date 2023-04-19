@@ -40,7 +40,6 @@ const config: GatsbyConfig = {
             type: 'post',
           },
         ],
-        icon: '/favicon.ico',
       },
     },
     {
