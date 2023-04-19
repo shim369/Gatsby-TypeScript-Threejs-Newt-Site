@@ -28,7 +28,7 @@ const config: GatsbyConfig = {
             type: 'post',
           },
         ],
-        icon: `/images/icon.png`,
+        icon: '/favicon.ico',
       },
     },
     {
