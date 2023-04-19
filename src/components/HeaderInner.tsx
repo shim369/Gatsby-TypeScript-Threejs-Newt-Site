@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "gatsby";
-import Nav from "./Nav";
 
-function HeaderInner() {
+const HeaderInner: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false)
 
-  const toggleMenu = () => {
+  const handleToggleMenu = () => {
     setMenuOpen(!menuOpen)
   }
   return (  
@@ -28,14 +27,25 @@ function HeaderInner() {
               Contact
             </Link>
           </div>
-          <button className="mobileNavIcon" onClick={toggleMenu}>
+          <button className="mobileNavIcon" onClick={handleToggleMenu}>
             <i className="material-icons">
               {menuOpen ? "close" : "menu"}
             </i>
           </button>
           <div className={`offCanvasMenu ${menuOpen ? "open" : ""}`}>
             <div className="mobileNav">
-              <Nav toggleMenu={toggleMenu} />
+              <Link to="/#a01" onClick={handleToggleMenu}>
+                About
+              </Link>
+              <Link to="/#a02" onClick={handleToggleMenu}>
+                Skills
+              </Link>
+              <Link to="/#a03" onClick={handleToggleMenu}>
+                Blog
+              </Link>
+              <Link to="/#a04" onClick={handleToggleMenu}>
+                Contact
+              </Link>
             </div>
           </div>
         </nav>
