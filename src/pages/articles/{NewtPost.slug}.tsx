@@ -1,6 +1,5 @@
 import * as React from 'react'
-import { graphql } from 'gatsby'
-import type { HeadFC, PageProps } from 'gatsby'
+import { graphql, HeadFC, PageProps } from 'gatsby'
 import { Queries } from '../../types/graphql'
 import HeaderInner from '../../components/HeaderInner';
 import Contact from '../../components/Contact';

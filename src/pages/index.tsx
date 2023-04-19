@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { graphql } from 'gatsby';
-import { Link, HeadFC, PageProps } from 'gatsby';
+import { graphql, Link, HeadFC, PageProps } from 'gatsby';
 import { Queries } from '../types/graphql';
 import "../styles/style.scss"
 import ThreeScene from '../components/ThreeScene';
