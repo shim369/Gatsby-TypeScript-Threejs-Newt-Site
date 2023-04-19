@@ -61,7 +61,7 @@ function ThreeScene() {
       const particleSphereGeometry = new THREE.SphereGeometry(0.01, 8, 8);
 
       // Create particle mesh array
-      const particlesMeshArray = [];
+      const particlesMeshArray: THREE.Mesh[] = [];
 
       // Create particles
       for (let i = 0; i < count; i++) {
@@ -104,7 +104,7 @@ function ThreeScene() {
       tick();
 
       // Resize
-      window.addEventListener("resize", () => {
+      const handleResize = () => {
         sizes.width = window.innerWidth;
         sizes.height = window.innerHeight;
 
@@ -113,7 +113,23 @@ function ThreeScene() {
 
         renderer.setSize(sizes.width, sizes.height);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-      });
+      };
+
+      window.addEventListener("resize", handleResize);
+
+      return () => {
+        window.removeEventListener("resize", handleResize);
+        controls.dispose();
+        renderer.dispose();
+        scene.remove(earth);
+        particlesMeshArray.forEach((particle) => {
+          scene.remove(particle);
+        });
+        material.dispose();
+        texture.dispose();
+        particlesGeometry.dispose();
+        particleSphereGeometry.dispose();
+      };
     }
   }, []);
   return (
