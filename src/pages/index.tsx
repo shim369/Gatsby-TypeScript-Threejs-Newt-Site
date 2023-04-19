@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { graphql, Link, HeadFC, PageProps } from 'gatsby';
 import { Queries } from '../types/graphql';
 import "../styles/style.scss"
@@ -36,10 +36,10 @@ const IndexPage = ({ data }: PageProps<Queries.IndexPageQuery>) => {
           <h1>About</h1>
           <div className="flex-box">
             <div className="flex-image">
-              <img src={about1} alt="" />
-              <img src={about2} alt="" />
-              <img src={about3} alt="" />
-              <img src={about4} alt="" />
+              <img src={about1} alt="about1" />
+              <img src={about2} alt="about2" />
+              <img src={about3} alt="about3" />
+              <img src={about4} alt="about4" />
             </div>
             <div className="flex-text">
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem consequatur laborum autem ea! Facere repellat, quas reiciendis dolores beatae ipsam libero amet vel in pariatur? Ipsa dolores dolore dolorum quas.</p>
@@ -55,7 +55,7 @@ const IndexPage = ({ data }: PageProps<Queries.IndexPageQuery>) => {
           <ul className="skills-detail">
             <li>
               <div className="skills-img">
-                <img src={astro} alt="" />
+                <img src={astro} alt="astro" />
               </div>
               <div className="skills-text">
                 <h2>Astro</h2>
@@ -64,7 +64,7 @@ const IndexPage = ({ data }: PageProps<Queries.IndexPageQuery>) => {
             </li>
             <li>
               <div className="skills-img">
-                <img src={js} alt="" />
+                <img src={js} alt="js" />
               </div>
               <div className="skills-text">
                 <h2>JavaScript</h2>
@@ -73,7 +73,7 @@ const IndexPage = ({ data }: PageProps<Queries.IndexPageQuery>) => {
             </li>
             <li>
               <div className="skills-img">
-                <img src={next} alt="" />
+                <img src={next} alt="next" />
               </div>
               <div className="skills-text">
                 <h2>Next.js</h2>
@@ -82,7 +82,7 @@ const IndexPage = ({ data }: PageProps<Queries.IndexPageQuery>) => {
             </li>
             <li>
               <div className="skills-img">
-                <img src={nuxt} alt="" />
+                <img src={nuxt} alt="nuxt" />
               </div>
               <div className="skills-text">
                 <h2>Nuxt.js</h2>
@@ -91,7 +91,7 @@ const IndexPage = ({ data }: PageProps<Queries.IndexPageQuery>) => {
             </li>
             <li>
               <div className="skills-img">
-                <img src={py} alt="" />
+                <img src={py} alt="python" />
               </div>
               <div className="skills-text">
                 <h2>Python</h2>
@@ -100,7 +100,7 @@ const IndexPage = ({ data }: PageProps<Queries.IndexPageQuery>) => {
             </li>
             <li>
               <div className="skills-img">
-                <img src={figma} alt="" />
+                <img src={figma} alt="figma" />
               </div>
               <div className="skills-text">
                 <h2>Figma</h2>
