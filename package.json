@@ -17,15 +17,21 @@
   },
   "dependencies": {
     "gatsby": "^5.9.0",
+    "gatsby-omni-font-loader": "^2.0.2",
+    "gatsby-plugin-google-fonts": "^1.0.1",
+    "gatsby-plugin-root-import": "^2.0.9",
     "gatsby-plugin-sass": "^6.9.0",
+    "gatsby-source-newt": "^2.0.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sass": "^1.62.0"
+    "sass": "^1.62.0",
+    "three": "^0.151.3"
   },
   "devDependencies": {
     "@types/node": "^18.15.11",
     "@types/react": "^18.0.35",
     "@types/react-dom": "^18.0.11",
+    "@types/three": "^0.150.2",
     "typescript": "^5.0.4"
   }
 }

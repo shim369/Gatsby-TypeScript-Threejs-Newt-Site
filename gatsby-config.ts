@@ -1,15 +1,65 @@
 import type { GatsbyConfig } from "gatsby";
+const path = require('path');
+
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `gatsby-site`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: `GATSBY BASE`,
+    siteUrl: `https://gatsbybase.vercel.app/`
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
-  plugins: ["gatsby-plugin-sass"]
+  plugins: [
+    {
+      resolve: 'gatsby-source-newt',
+      options: {
+        enableListener: true,
+        spaceUid: process.env.NEWT_SPACE_UID,
+        token: process.env.NEWT_CDN_API_TOKEN,
+        appUid: 'blog',
+        models: [
+          {
+            uid: 'article',
+            type: 'post',
+          },
+        ],
+        icon: `/images/icon.png`,
+      },
+    },
+    {
+      resolve: 'gatsby-omni-font-loader',
+      options: {
+        preconnect: [`https://fonts.googleapis.com`, `https://fonts.gstatic.com`],
+        web: [
+          {
+            name: `Open Sans`,
+            file: `https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap`,
+          },
+        ],
+      },
+    },
+    {
+      resolve: "gatsby-plugin-google-fonts",
+      options: {
+        fonts: [
+          "Material Icons",
+        ],
+        display: "swap",
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-root-import',
+      options: {
+        src: path.join(__dirname, 'src')
+      }
+    },
+    "gatsby-plugin-sass"
+  ]
 };
 
 export default config;
